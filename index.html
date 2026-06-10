@@ -5,77 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royals by Eve</title>
 
-<!-- Elegant Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
-* {
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+body {margin:0;font-family:Arial;background:#000;color:#fff;}
 
-body {
-font-family:'Inter', sans-serif;
-background:#0b0b0b;
-color:#f5f5f5;
-line-height:1.6;
-}
-
-/* HEADER */
 header {
-background:#0b0b0b;
+background:#000;
 text-align:center;
-padding:30px 20px;
-border-bottom:1px solid rgba(212,175,55,0.4);
-}
-
-header img {
-width:120px;
-margin-bottom:10px;
+padding:30px;
+border-bottom:2px solid gold;
 }
 
 header h1 {
-font-family:'Playfair Display', serif;
-color:#d4af37;
-font-size:32px;
-letter-spacing:1px;
+color:gold;
+font-size:36px;
+margin:0;
 }
 
 header p {
-font-size:14px;
-opacity:0.8;
+color:#ddd;
+font-style:italic;
 }
 
-/* HERO */
 .hero {
-height:360px;
+background:url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9') center/cover;
+height:350px;
 display:flex;
 align-items:center;
 justify-content:center;
+flex-direction:column;
 text-align:center;
-background:linear-gradient(to bottom, #0b0b0b, #111);
+color:white;
+text-shadow:0 0 10px black;
 }
 
-.hero img {
-max-width:260px;
-opacity:0.95;
+.hero h2 {
+font-size:32px;
+color:gold;
+margin-bottom:10px;
 }
 
-/* SECTIONS */
-.section {
-padding:60px 20px;
-text-align:center;
-}
+.section {padding:40px;text-align:center;}
 
-.section h2 {
-font-family:'Playfair Display', serif;
-color:#d4af37;
-margin-bottom:25px;
-font-size:28px;
-}
-
-/* CARDS */
 .cards {
 display:flex;
 justify-content:center;
@@ -84,99 +54,51 @@ gap:20px;
 }
 
 .card {
-background:#121212;
-padding:25px;
-width:230px;
-border-radius:12px;
-border:1px solid rgba(212,175,55,0.25);
-transition:0.3s ease;
-}
-
-.card:hover {
-transform:translateY(-5px);
-border-color:#d4af37;
+background:#111;
+padding:20px;
+width:220px;
+border-radius:10px;
+border:1px solid gold;
+box-shadow:0 0 10px rgba(255,215,0,0.2);
 }
 
 .card h3 {
-font-family:'Playfair Display', serif;
-color:#d4af37;
-margin-bottom:10px;
+color:gold;
 }
 
-.card p {
-font-size:14px;
-opacity:0.85;
-}
-
-/* BUTTON */
 button {
-background:#d4af37;
-color:#000;
+background:gold;
+color:black;
 border:none;
 padding:12px;
 width:100%;
 cursor:pointer;
-font-weight:600;
-border-radius:6px;
-transition:0.3s;
+font-weight:bold;
 }
 
-button:hover {
-background:#c19b2e;
-}
-
-/* FORM */
-form {
-max-width:350px;
-margin:0 auto;
-}
-
-input {
-width:100%;
-padding:12px;
-margin-bottom:12px;
-border-radius:6px;
-border:1px solid #333;
-background:#111;
-color:#fff;
-}
-
-/* CONTACT */
 .contact {
 background:#111;
-padding:40px 20px;
-border-top:1px solid rgba(212,175,55,0.3);
-text-align:center;
+padding:30px;
+margin-top:20px;
+border-top:1px solid gold;
 }
 
-.contact h2 {
-font-family:'Playfair Display', serif;
-color:#d4af37;
-margin-bottom:10px;
-}
-
-/* FOOTER */
 footer {
-background:#0b0b0b;
+background:#000;
 text-align:center;
 padding:20px;
-border-top:1px solid rgba(212,175,55,0.2);
-font-size:13px;
-opacity:0.7;
+border-top:1px solid gold;
 }
 
-/* WHATSAPP BUTTON */
 a.whatsapp {
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:14px 18px;
+padding:15px;
 border-radius:50px;
 text-decoration:none;
-font-weight:600;
-box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -184,13 +106,13 @@ box-shadow:0 4px 15px rgba(0,0,0,0.3);
 <body>
 
 <header>
-<img src="royals_logo.png" alt="Logo">
 <h1>Royals by Eve</h1>
-<p>Where luxury meets beauty</p>
+<p>Where passion meets purpose</p>
 </header>
 
 <div class="hero">
-<img src="royals_logo.png" alt="Hero Logo">
+<h2>Look & Feel Royal ✨</h2>
+<p>Hair • Beauty • Nails • Wellness Spa</p>
 </div>
 
 <div class="section">
@@ -213,7 +135,7 @@ box-shadow:0 4px 15px rgba(0,0,0,0.3);
 </div>
 
 <div class="card">
-<h3>Spa</h3>
+<h3>Wellness Spa</h3>
 <p>Relaxation & body treatments</p>
 </div>
 </div>
@@ -222,9 +144,9 @@ box-shadow:0 4px 15px rgba(0,0,0,0.3);
 <div class="section">
 <h2>Book Appointment</h2>
 <form onsubmit="alert('Booking sent! We will contact you.'); return false;">
-<input placeholder="Name" required>
-<input placeholder="Phone" required>
-<input type="date" required>
+<input placeholder="Name" required><br><br>
+<input placeholder="Phone" required><br><br>
+<input type="date" required><br><br>
 <button type="submit">Submit Booking</button>
 </form>
 </div>
@@ -232,7 +154,7 @@ box-shadow:0 4px 15px rgba(0,0,0,0.3);
 <div class="contact">
 <h2>Contact Us</h2>
 <p>📞 064 517 4088 / 071 689 9156</p>
-<p>📍 Cnr 5th Avenue & Horwood Street, Edenvale</p>
+<p>📍 Cnr 5th Avenue & Horwood Street<br>Dowerglen, Edenvale</p>
 </div>
 
 <footer>
