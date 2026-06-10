@@ -3,16 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Glow Salon</title>
+<title>Royals by Eve</title>
 
 <style>
-body {margin:0;font-family:Arial;background:#f5f5f5;}
+body {margin:0;font-family:Arial;background:#000;color:#fff;}
 
 header {
-background:#111;
-color:white;
+background:#000;
 text-align:center;
-padding:25px;
+padding:30px;
+border-bottom:2px solid gold;
+}
+
+header h1 {
+color:gold;
+font-size:36px;
+margin:0;
+}
+
+header p {
+color:#ddd;
+font-style:italic;
 }
 
 .hero {
@@ -21,10 +32,16 @@ height:350px;
 display:flex;
 align-items:center;
 justify-content:center;
+flex-direction:column;
+text-align:center;
 color:white;
-font-size:32px;
-font-weight:bold;
 text-shadow:0 0 10px black;
+}
+
+.hero h2 {
+font-size:32px;
+color:gold;
+margin-bottom:10px;
 }
 
 .section {padding:40px;text-align:center;}
@@ -37,28 +54,40 @@ gap:20px;
 }
 
 .card {
-background:white;
+background:#111;
 padding:20px;
 width:220px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+border:1px solid gold;
+box-shadow:0 0 10px rgba(255,215,0,0.2);
+}
+
+.card h3 {
+color:gold;
 }
 
 button {
-background:#ff4da6;
-color:white;
+background:gold;
+color:black;
 border:none;
 padding:12px;
 width:100%;
 cursor:pointer;
+font-weight:bold;
+}
+
+.contact {
+background:#111;
+padding:30px;
+margin-top:20px;
+border-top:1px solid gold;
 }
 
 footer {
-background:#111;
-color:white;
+background:#000;
 text-align:center;
 padding:20px;
-margin-top:40px;
+border-top:1px solid gold;
 }
 
 a.whatsapp {
@@ -77,12 +106,13 @@ text-decoration:none;
 <body>
 
 <header>
-<h1>Luxury Glow Salon</h1>
-<p>Hair • Nails • Beauty • Spa</p>
+<h1>Royals by Eve</h1>
+<p>Where passion meets purpose</p>
 </header>
 
 <div class="hero">
-Look & Feel Beautiful ✨
+<h2>Look & Feel Royal ✨</h2>
+<p>Hair • Beauty • Nails • Wellness Spa</p>
 </div>
 
 <div class="section">
@@ -90,18 +120,23 @@ Look & Feel Beautiful ✨
 
 <div class="cards">
 <div class="card">
-<h3>Hair Styling</h3>
-<p>Cuts, colour & treatments</p>
+<h3>Hair</h3>
+<p>Professional styling & treatments</p>
+</div>
+
+<div class="card">
+<h3>Beauty</h3>
+<p>Facials & skincare services</p>
 </div>
 
 <div class="card">
 <h3>Nails</h3>
-<p>Manicure & pedicure</p>
+<p>Manicure & pedicure services</p>
 </div>
 
 <div class="card">
-<h3>Makeup</h3>
-<p>Bridal & events makeup</p>
+<h3>Wellness Spa</h3>
+<p>Relaxation & body treatments</p>
 </div>
 </div>
 </div>
@@ -116,11 +151,17 @@ Look & Feel Beautiful ✨
 </form>
 </div>
 
+<div class="contact">
+<h2>Contact Us</h2>
+<p>📞 064 517 4088 / 071 689 9156</p>
+<p>📍 Cnr 5th Avenue & Horwood Street<br>Dowerglen, Edenvale</p>
+</div>
+
 <footer>
-<p>© 2026 Luxury Glow Salon</p>
+<p>© 2026 Royals by Eve</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/27000000000">
+<a class="whatsapp" href="https://wa.me/27645174088">
 WhatsApp Us
 </a>
 
