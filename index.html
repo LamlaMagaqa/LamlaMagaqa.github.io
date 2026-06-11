@@ -1,274 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royals by Eve</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Royals by Eve - Premium Beauty & Wellness Salon">
+    <title>Royals by Eve - Premium Beauty Services</title>
 
-<!-- Elegant Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Professional Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #000;
-    color: #fff;
-    line-height: 1.7;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* HEADER */
-header {
-    background: #000;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 2px solid gold;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-header img {
-    width: 150px;
-    margin-bottom: 10px;
-}
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 3px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
 
-header h1 {
-    color: gold;
-    margin: 5px 0;
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
+        header img {
+            width: 140px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+        }
 
-header p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    color: #d4af37;
-}
+        header h1 {
+            color: #d4af37;
+            margin: 10px 0 5px;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
-/* HERO */
-.hero {
-    background: black;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
+        header p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            color: #b89968;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
 
-.hero img {
-    max-width: 90%;
-    max-height: 300px;
-}
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #000000 0%, #0f0f0f 100%);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* SECTIONS */
-.section {
-    padding: 40px;
-    text-align: center;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
 
-h2 {
-    font-family: 'Playfair Display', serif;
-    color: gold;
-    font-size: 2.4rem;
-    margin-bottom: 30px;
-}
+        .hero img {
+            max-width: 85%;
+            max-height: 320px;
+            z-index: 1;
+            filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.3));
+        }
 
-/* CARDS */
-.cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+        /* SECTIONS */
+        .section {
+            padding: 60px 40px;
+            text-align: center;
+        }
 
-.card {
-    background: #111;
-    padding: 20px;
-    width: 220px;
-    border-radius: 10px;
-    border: 1px solid gold;
-    transition: 0.3s;
-}
+        .section:nth-child(even) {
+            background: rgba(20, 20, 20, 0.8);
+        }
 
-.card:hover {
-    transform: translateY(-5px);
-}
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
 
-.card h3 {
-    color: gold;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-}
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
 
-.card p {
-    color: #ddd;
-    font-size: 0.95rem;
-}
+        /* SERVICES CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* FORM */
-input {
-    padding: 12px;
-    width: 280px;
-    max-width: 90%;
-    border: 1px solid gold;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-}
+        .card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #d4af37;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
 
-button {
-    background: gold;
-    color: black;
-    border: none;
-    padding: 12px;
-    width: 280px;
-    max-width: 90%;
-    cursor: pointer;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 5px;
-    letter-spacing: 1px;
-}
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
 
-button:hover {
-    opacity: 0.9;
-}
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+            border-color: #f4d03f;
+        }
 
-/* CONTACT */
-.contact {
-    background: #111;
-    padding: 30px;
-    border-top: 1px solid gold;
-    text-align: center;
-}
+        .card:hover::before {
+            opacity: 1;
+        }
 
-.contact h2 {
-    font-family: 'Playfair Display', serif;
-}
+        .card h3 {
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
 
-/* FOOTER */
-footer {
-    background: #000;
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid gold;
-    font-family: 'Playfair Display', serif;
-}
+        .card p {
+            color: #cccccc;
+            font-size: 1rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
 
-/* WHATSAPP BUTTON */
-a.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-}
+        /* BOOKING SECTION */
+        .booking-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 60px 40px;
+        }
 
-</style>
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #999;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #f4d03f;
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        button {
+            width: 100%;
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            color: #000;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+            letter-spacing: 3px;
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            padding: 50px 40px;
+            border-top: 2px solid #d4af37;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            padding: 20px;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin: 10px 0;
+        }
+
+        .contact-item strong {
+            color: #d4af37;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 25px 20px;
+            border-top: 2px solid #d4af37;
+            font-family: 'Montserrat', sans-serif;
+            color: #999;
+            font-size: 0.95rem;
+        }
+
+        /* WHATSAPP BUTTON - FIXED */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-btn:active {
+            transform: scale(1.05);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .whatsapp-btn {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
+        }
+
+        /* ACCESSIBILITY */
+        :focus-visible {
+            outline: 2px solid #d4af37;
+            outline-offset: 2px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <img src="royals_logo.png" alt="Royals by Eve Logo">
-    <h1>Royals by Eve</h1>
-    <p>Where passion meets purpose</p>
-</header>
+    <header>
+        <img src="royals_logo.png" alt="Royals by Eve Logo">
+        <h1>Royals by Eve</h1>
+        <p>Where Passion Meets Purpose</p>
+    </header>
 
-<div class="hero">
-    <img src="royals_logo.png" alt="Salon Logo">
-</div>
+    <div class="hero">
+        <img src="royals_logo.png" alt="Salon Logo">
+    </div>
 
-<div class="section">
-    <h2>Our Services</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>Hair</h3>
-            <p>Professional styling & treatments</p>
-        </div>
-
-        <div class="card">
-            <h3>Nails</h3>
-            <p>Beauty and nail care services</p>
-        </div>
-
-        <div class="card">
-            <h3>Massage</h3>
-            <p>Relaxation and body therapy</p>
-        </div>
-
-        <div class="card">
-            <h3>Lashes</h3>
-            <p>Elegant lash extensions</p>
-        </div>
-
-        <div class="card">
-            <h3>Brows</h3>
-            <p>Brow shaping & tinting</p>
-        </div>
-
-        <div class="card">
-            <h3>Waxing</h3>
-            <p>Smooth skin treatments</p>
+    <div class="section">
+        <h2>Our Services</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Hair</h3>
+                <p>Professional styling & treatments</p>
+            </div>
+            <div class="card">
+                <h3>Nails</h3>
+                <p>Beauty and nail care services</p>
+            </div>
+            <div class="card">
+                <h3>Massage</h3>
+                <p>Relaxation and body therapy</p>
+            </div>
+            <div class="card">
+                <h3>Lashes</h3>
+                <p>Elegant lash extensions</p>
+            </div>
+            <div class="card">
+                <h3>Brows</h3>
+                <p>Brow shaping & tinting</p>
+            </div>
+            <div class="card">
+                <h3>Waxing</h3>
+                <p>Smooth skin treatments</p>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="section">
-    <h2>Book Appointment</h2>
+    <div class="booking-section">
+        <h2 style="margin-bottom: 40px;">Book Your Appointment</h2>
+        <div class="form-container">
+            <form onsubmit="sendBooking(event)">
+                <input type="text" id="name" placeholder="Your Full Name" required>
+                <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9+ -]{10,}" required>
+                <input type="date" id="date" required>
+                <input type="email" id="email" placeholder="Email Address (optional)">
+                <textarea id="service" placeholder="Select service or additional notes" rows="3"></textarea>
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
 
-    <!-- ✅ WHATSAPP BOOKING FORM -->
-    <form onsubmit="sendBooking(event)">
-        <input type="text" id="name" placeholder="Name" required><br><br>
-        <input type="tel" id="phone" placeholder="Phone" required><br><br>
-        <input type="date" id="date" required><br><br>
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <p><strong>📞 Phone</strong></p>
+                <p>064 517 4088</p>
+            </div>
+            <div class="contact-item">
+                <p><strong>📍 Location</strong></p>
+                <p>Cnr 5th Avenue & Horwood Street<br>Dowerglen, Edenvale</p>
+            </div>
+        </div>
+    </div>
 
-        <button type="submit">Submit Booking</button>
-    </form>
-</div>
+    <footer>
+        <p>&copy; 2026 Royals by Eve. All rights reserved.</p>
+    </footer>
 
-<div class="contact">
-    <h2>Contact Us</h2>
-    <p>📞 064 517 4088</p>
-    <p>📍 Cnr 5th Avenue & Horwood Street<br>Dowerglen, Edenvale</p>
-</div>
+    <!-- WhatsApp Button with Font Awesome Icon -->
+    <a class="whatsapp-btn" href="https://wa.me/27645174088?text=Hello%20Royals%20by%20Eve%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-<footer>
-    <p>© 2026 Royals by Eve</p>
-</footer>
+    <!-- Booking Script -->
+    <script>
+        function sendBooking(e) {
+            e.preventDefault();
 
-<a class="whatsapp" href="https://wa.me/27645174088" target="_blank">
-    WhatsApp Us
-</a>
+            const name = document.getElementById("name").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const date = document.getElementById("date").value;
+            const email = document.getElementById("email").value.trim();
+            const service = document.getElementById("service").value.trim();
 
-<!-- ✅ WHATSAPP BOOKING SCRIPT -->
-<script>
-function sendBooking(e) {
-    e.preventDefault();
+            if (!name || !phone || !date) {
+                alert("Please fill in all required fields.");
+                return;
+            }
 
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let date = document.getElementById("date").value;
+            const message = `*New Booking Request*%0A%0A` +
+                `*Name:* ${encodeURIComponent(name)}%0A` +
+                `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                `*Preferred Date:* ${date}%0A` +
+                (email ? `*Email:* ${encodeURIComponent(email)}%0A` : '') +
+                (service ? `*Service/Notes:* ${encodeURIComponent(service)}%0A` : '') +
+                `%0AThank you! We will confirm shortly.`;
 
-    let message =
-        `New Booking:%0A` +
-        `Name: ${name}%0A` +
-        `Phone: ${phone}%0A` +
-        `Date: ${date}`;
+            const whatsappURL = "https://wa.me/27645174088?text=" + message;
+            window.open(whatsappURL, "_blank", "noopener,noreferrer");
 
-    let whatsappURL = "https://wa.me/27645174088?text=" + message;
-
-    window.open(whatsappURL, "_blank");
-}
-</script>
+            // Reset form
+            document.querySelector("form").reset();
+        }
+    </script>
 
 </body>
 </html>
