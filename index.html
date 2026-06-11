@@ -5,14 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royals by Eve</title>
 
+<!-- Elegant Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #000;
     color: #fff;
+    line-height: 1.7;
 }
 
+/* HEADER */
 header {
     background: #000;
     text-align: center;
@@ -28,8 +34,20 @@ header img {
 header h1 {
     color: gold;
     margin: 5px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
+header p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #d4af37;
+}
+
+/* HERO */
 .hero {
     background: black;
     height: 350px;
@@ -45,11 +63,20 @@ header h1 {
     max-height: 300px;
 }
 
+/* SECTIONS */
 .section {
     padding: 40px;
     text-align: center;
 }
 
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: gold;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
+
+/* CARDS */
 .cards {
     display: flex;
     justify-content: center;
@@ -63,18 +90,32 @@ header h1 {
     width: 220px;
     border-radius: 10px;
     border: 1px solid gold;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card h3 {
     color: gold;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
 }
 
+.card p {
+    color: #ddd;
+    font-size: 0.95rem;
+}
+
+/* FORM */
 input {
     padding: 12px;
     width: 280px;
     max-width: 90%;
     border: 1px solid gold;
     border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 button {
@@ -85,14 +126,17 @@ button {
     width: 280px;
     max-width: 90%;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
     border-radius: 5px;
+    letter-spacing: 1px;
 }
 
 button:hover {
     opacity: 0.9;
 }
 
+/* CONTACT */
 .contact {
     background: #111;
     padding: 30px;
@@ -100,13 +144,20 @@ button:hover {
     text-align: center;
 }
 
+.contact h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* FOOTER */
 footer {
     background: #000;
     text-align: center;
     padding: 20px;
     border-top: 1px solid gold;
+    font-family: 'Playfair Display', serif;
 }
 
+/* WHATSAPP BUTTON */
 a.whatsapp {
     position: fixed;
     bottom: 20px;
@@ -117,7 +168,9 @@ a.whatsapp {
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
+
 </style>
 </head>
 
@@ -144,27 +197,27 @@ a.whatsapp {
 
         <div class="card">
             <h3>Nails</h3>
-            <p>Facials & skincare services</p>
+            <p>Beauty and nail care services</p>
         </div>
 
         <div class="card">
             <h3>Massage</h3>
-            <p>Manicure & pedicure services</p>
+            <p>Relaxation and body therapy</p>
         </div>
 
         <div class="card">
             <h3>Lashes</h3>
-            <p>Relaxation & body treatments</p>
-	</div>
+            <p>Elegant lash extensions</p>
+        </div>
 
         <div class="card">
             <h3>Brows</h3>
-            <p>Relaxation & body treatments</p>
-	</div>
+            <p>Brow shaping & tinting</p>
+        </div>
 
         <div class="card">
             <h3>Waxing</h3>
-            <p>Relaxation & body treatments</p>
+            <p>Smooth skin treatments</p>
         </div>
     </div>
 </div>
