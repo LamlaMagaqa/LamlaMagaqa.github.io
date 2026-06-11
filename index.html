@@ -29,6 +29,36 @@
             color: #ffffff;
             line-height: 1.8;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* WAVE BACKGROUND ANIMATION */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                rgba(212, 175, 55, 0.03) 2px,
+                rgba(212, 175, 55, 0.03) 4px
+            );
+            animation: waveMove 20s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes waveMove {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         /* HEADER */
@@ -45,10 +75,10 @@
             height: auto;
             margin-bottom: 15px;
             filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)) brightness(1.2) saturate(1.1);
-            animation: logoGlow 3s ease-in-out infinite;
+            animation: logoGlow 8s ease-in-out infinite;
         }
 
-        /* LIGHTING UP ANIMATION */
+        /* LIGHTING UP ANIMATION - SLOW MOTION */
         @keyframes logoGlow {
             0% {
                 filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)) brightness(1.2) saturate(1.1);
@@ -280,9 +310,9 @@
 
         .contact-info {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 30px;
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -298,6 +328,17 @@
 
         .contact-item strong {
             color: #d4af37;
+        }
+
+        .contact-item a {
+            color: #d4af37;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #fff;
+            text-decoration: underline;
         }
 
         /* FOOTER */
@@ -479,6 +520,10 @@
             <div class="contact-item">
                 <p><strong>📍 Location</strong></p>
                 <p>Cnr 5th Avenue & Horwood Street<br>Dowerglen, Edenvale</p>
+            </div>
+            <div class="contact-item">
+                <p><strong>📷 Instagram</strong></p>
+                <p><a href="https://www.instagram.com/royalsbyeve/" target="_blank" rel="noopener noreferrer">@royalsbyeve</a></p>
             </div>
         </div>
     </div>
