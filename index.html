@@ -126,26 +126,6 @@
             max-height: 300px;
             z-index: 1;
             filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.3)) brightness(1.2) saturate(1.1);
-            animation: fadeInOut 5s ease-in-out infinite;
-        }
-
-        /* LOGO CYCLE ANIMATION */
-        @keyframes fadeInOut {
-            0% {
-                opacity: 1;
-            }
-            40% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
-            60% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
         }
 
         /* SECTIONS */
@@ -478,7 +458,7 @@
 
     <main>
         <div class="hero">
-            <img class="hero-img" id="cycleImg" src="royals_logo2.png" alt="Royals by Eve Salon Hero Image">
+            <img class="hero-img" src="royals_logo2.png" alt="Royals by Eve Salon Hero Image">
         </div>
 
         <section class="section">
@@ -593,18 +573,6 @@
             // Reset form
             document.querySelector("form").reset();
         }
-
-        // Logo Cycling Script
-        let isLogoTwo = true;
-        setInterval(() => {
-            const cycleImg = document.getElementById("cycleImg");
-            if (isLogoTwo) {
-                cycleImg.src = "royals_logo3.png";
-            } else {
-                cycleImg.src = "royals_logo2.png";
-            }
-            isLogoTwo = !isLogoTwo;
-        }, 5000); // Changes every 5 seconds
     </script>
 
 </body>
