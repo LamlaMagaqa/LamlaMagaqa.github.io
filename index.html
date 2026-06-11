@@ -381,6 +381,16 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
         }
 
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-row input {
+            margin-bottom: 0;
+        }
+
         button {
             width: 100%;
             background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
@@ -505,11 +515,6 @@
             transform: scale(1.03);
             box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
             border-color: #e8c856;
-        }
-
-        .instagram-placeholder i {
-            font-size: 3rem;
-            color: #d4af37;
         }
 
         /* FOOTER */
@@ -669,6 +674,15 @@
                 gap: 20px;
             }
 
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-row input {
+                margin-bottom: 25px;
+            }
+
             .whatsapp-btn {
                 width: 60px;
                 height: 60px;
@@ -769,8 +783,16 @@
                     <label for="phone">Phone Number *</label>
                     <input type="tel" id="phone" placeholder="Your phone number" pattern="[0-9+ -]{10,}" required>
                     
-                    <label for="date">Preferred Date *</label>
-                    <input type="date" id="date" required>
+                    <div class="form-row">
+                        <div>
+                            <label for="date">Preferred Date *</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div>
+                            <label for="time">Preferred Time *</label>
+                            <input type="time" id="time" required>
+                        </div>
+                    </div>
                     
                     <label for="email">Email Address (optional)</label>
                     <input type="email" id="email" placeholder="Your email address">
@@ -806,26 +828,14 @@
 
         <section class="instagram-section">
             <h2>Follow Us</h2>
-            <p style="color: #c9a961; font-size: 1.15rem; margin-bottom: 40px; letter-spacing: 1px;">@royalsbyeve</p>
+            <p style="color: #c9a961; font-size: 1.15rem; margin-bottom: 40px; letter-spacing: 1px;"><a href="https://www.instagram.com/royalsbyeve/" target="_blank" rel="noopener noreferrer" style="color: #d4af37; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e8c856'" onmouseout="this.style.color='#d4af37'">@royalsbyeve</a></p>
             <div class="instagram-feed">
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')">
-                    <i class="fab fa-instagram"></i>
-                </div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
             </div>
         </section>
     </main>
@@ -847,11 +857,12 @@
             const name = document.getElementById("name").value.trim();
             const phone = document.getElementById("phone").value.trim();
             const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
             const email = document.getElementById("email").value.trim();
             const service = document.getElementById("service").value.trim();
 
-            if (!name || !phone || !date) {
-                alert("Please fill in all required fields.");
+            if (!name || !phone || !date || !time) {
+                alert("Please fill in all required fields including date and time.");
                 return;
             }
 
@@ -859,6 +870,7 @@
                 `*Name:* ${encodeURIComponent(name)}%0A` +
                 `*Phone:* ${encodeURIComponent(phone)}%0A` +
                 `*Preferred Date:* ${date}%0A` +
+                `*Preferred Time:* ${time}%0A` +
                 (email ? `*Email:* ${encodeURIComponent(email)}%0A` : '') +
                 (service ? `*Service/Notes:* ${encodeURIComponent(service)}%0A` : '') +
                 `%0AThank you! We will confirm shortly.`;
