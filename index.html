@@ -45,24 +45,24 @@
             height: auto;
             margin-bottom: 15px;
             filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)) brightness(1.2) saturate(1.1);
-            animation: heartbeatGlow 1.2s ease-in-out infinite;
+            animation: heartbeatGlow 2.5s ease-in-out infinite;
         }
 
-        /* HEARTBEAT BREATHING ANIMATION */
+        /* HEARTBEAT BREATHING ANIMATION - SLOWER */
         @keyframes heartbeatGlow {
             0% {
                 filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)) brightness(1.2) saturate(1.1);
             }
-            25% {
+            20% {
                 filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.8)) drop-shadow(0 0 40px rgba(212, 175, 55, 0.5)) brightness(1.4) saturate(1.2);
             }
-            35% {
+            30% {
                 filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)) brightness(1.2) saturate(1.1);
             }
-            60% {
+            50% {
                 filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.8)) drop-shadow(0 0 40px rgba(212, 175, 55, 0.5)) brightness(1.4) saturate(1.2);
             }
-            70% {
+            60% {
                 filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)) brightness(1.2) saturate(1.1);
             }
             100% {
