@@ -41,10 +41,11 @@
         }
 
         header img {
-            width: 140px;
-            height: auto;
+            width: 120px;
+            height: 120px;
             margin-bottom: 15px;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)) brightness(1.2) saturate(1.1);
+            object-fit: contain;
         }
 
         header h1 {
@@ -69,7 +70,7 @@
         /* HERO SECTION */
         .hero {
             background: linear-gradient(135deg, #000000 0%, #0f0f0f 100%);
-            height: 400px;
+            height: 450px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -77,6 +78,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            padding: 40px 20px;
         }
 
         .hero::before {
@@ -91,10 +93,11 @@
         }
 
         .hero img {
-            max-width: 85%;
-            max-height: 320px;
+            width: 280px;
+            height: 280px;
             z-index: 1;
-            filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.3));
+            filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.3)) brightness(1.2) saturate(1.1);
+            object-fit: contain;
         }
 
         /* SECTIONS */
@@ -333,12 +336,27 @@
                 font-size: 2.2rem;
             }
 
+            header img {
+                width: 100px;
+                height: 100px;
+            }
+
             h2 {
                 font-size: 2rem;
             }
 
             .section {
                 padding: 40px 20px;
+            }
+
+            .hero {
+                height: 380px;
+                padding: 30px 20px;
+            }
+
+            .hero img {
+                width: 220px;
+                height: 220px;
             }
 
             .contact-info {
