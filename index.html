@@ -1,35 +1,163 @@
-<div class="section">
-    <h2>Our Services</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royals by Eve</title>
 
-    <div class="cards">
-        <div class="card">
-            <h3>Hair</h3>
-            <p>Professional styling, coloring & treatments</p>
-        </div>
+<style>
+body {margin:0;font-family:Arial;background:#000;color:#fff;}
 
-        <div class="card">
-            <h3>Nails</h3>
-            <p>Manicures, pedicures & nail enhancements</p>
-        </div>
+header {
+background:#000;
+text-align:center;
+padding:20px;
+border-bottom:2px solid gold;
+}
 
-        <div class="card">
-            <h3>Massage</h3>
-            <p>Relaxing body massages & wellness treatments</p>
-        </div>
+header img {
+width:150px;
+margin-bottom:10px;
+}
 
-        <div class="card">
-            <h3>Lashes</h3>
-            <p>Eyelash extensions & lash lifts</p>
-        </div>
+header h1 {
+color:gold;
+margin:5px 0;
+}
 
-        <div class="card">
-            <h3>Brows</h3>
-            <p>Brow shaping, tinting & styling</p>
-        </div>
+.hero {
+background:black;
+height:350px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+text-align:center;
+}
 
-        <div class="card">
-            <h3>Waxing</h3>
-            <p>Professional face & body waxing services</p>
-        </div>
-    </div>
+.hero img {
+max-width:90%;
+max-height:300px;
+}
+
+.section {padding:40px;text-align:center;}
+
+.cards {
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.card {
+background:#111;
+padding:20px;
+width:220px;
+border-radius:10px;
+border:1px solid gold;
+}
+
+.card h3 {
+color:gold;
+}
+
+button {
+background:gold;
+color:black;
+border:none;
+padding:12px;
+width:100%;
+cursor:pointer;
+font-weight:bold;
+}
+
+.contact {
+background:#111;
+padding:30px;
+border-top:1px solid gold;
+}
+
+footer {
+background:#000;
+text-align:center;
+padding:20px;
+border-top:1px solid gold;
+}
+
+a.whatsapp {
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50px;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="royals_logo.png" alt="Royals by Eve Logo">
+<h1>Royals by Eve</h1>
+<p>Where passion meets purpose</p>
+</header>
+
+<div class="hero">
+<img src="royals_logo.png" alt="Salon Logo">
 </div>
+
+<div class="section">
+<h2>Our Services</h2>
+
+<div class="cards">
+<div class="card">
+<h3>Hair</h3>
+<p>Professional styling & treatments</p>
+</div>
+
+<div class="card">
+<h3>Beauty</h3>
+<p>Facials & skincare services</p>
+</div>
+
+<div class="card">
+<h3>Nails</h3>
+<p>Manicure & pedicure services</p>
+</div>
+
+<div class="card">
+<h3>Wellness Spa</h3>
+<p>Relaxation & body treatments</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Book Appointment</h2>
+<form onsubmit="alert('Booking sent! We will contact you.'); return false;">
+<input placeholder="Name" required><br><br>
+<input placeholder="Phone" required><br><br>
+<input type="date" required><br><br>
+<button type="submit">Submit Booking</button>
+</form>
+</div>
+
+<div class="contact">
+<h2>Contact Us</h2>
+<p>📞 064 517 4088 / 071 689 9156</p>
+<p>📍 Cnr 5th Avenue & Horwood Street<br>Dowerglen, Edenvale</p>
+</div>
+
+<footer>
+<p>© 2026 Royals by Eve</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/27645174088">
+WhatsApp Us
+</a>
+
+</body>
+</html>
