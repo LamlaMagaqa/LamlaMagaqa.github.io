@@ -39,12 +39,37 @@
             letter-spacing: 0.5px;
         }
 
+        /* MOVING BLACK WALL ANIMATION */
         body::before {
             content: '';
             position: fixed;
             top: 0;
             left: 0;
-            width: 200%;
+            width: 300%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent 0px,
+                transparent 50px,
+                rgba(0, 0, 0, 0.15) 50px,
+                rgba(0, 0, 0, 0.15) 100px
+            );
+            animation: wallMove 20s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes wallMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.33%); }
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
             background: repeating-linear-gradient(
                 90deg,
@@ -63,7 +88,8 @@
             100% { transform: translateX(-50%); }
         }
 
-        body::after {
+        /* LUXURY GLOW EFFECT */
+        main::before {
             content: '';
             position: fixed;
             top: 0;
@@ -111,6 +137,8 @@
             border-bottom: 2px solid #d4af37;
             box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
             backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 10;
         }
 
         .site-header .logo {
@@ -164,6 +192,7 @@
             position: relative;
             overflow: hidden;
             padding: 60px 40px;
+            z-index: 5;
         }
 
         .hero::before {
@@ -204,6 +233,7 @@
             text-align: center;
             position: relative;
             animation: fadeInUp 1s ease-out;
+            z-index: 5;
         }
 
         .section:nth-child(even) {
@@ -262,6 +292,7 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
+            cursor: pointer;
         }
 
         .card::before {
@@ -315,6 +346,18 @@
             line-height: 1.8;
         }
 
+        /* ACTIVE CARD CYCLING */
+        .card.active {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.25);
+            border-color: #e8c856;
+        }
+
+        .card.active::before,
+        .card.active::after {
+            opacity: 1;
+        }
+
         /* BOOKING SECTION */
         .booking-section {
             background: linear-gradient(135deg, rgba(20,20,20,0.95) 0%, rgba(10,10,10,0.95) 100%);
@@ -323,6 +366,7 @@
             border-top: 1.5px solid #d4af37;
             border-bottom: 1.5px solid #d4af37;
             text-align: center;
+            z-index: 5;
         }
 
         .booking-section::before {
@@ -422,6 +466,8 @@
             border-top: 1.5px solid #d4af37;
             border-bottom: 1.5px solid #d4af37;
             text-align: center;
+            position: relative;
+            z-index: 5;
         }
 
         .contact-info {
@@ -481,6 +527,8 @@
             background: linear-gradient(135deg, rgba(15,15,15,0.8) 0%, rgba(20,20,20,0.8) 100%);
             padding: 80px 60px;
             text-align: center;
+            position: relative;
+            z-index: 5;
         }
 
         .instagram-inner {
@@ -542,6 +590,8 @@
             color: #888;
             font-size: 0.95rem;
             letter-spacing: 1px;
+            position: relative;
+            z-index: 10;
         }
 
         /* WHATSAPP */
@@ -751,6 +801,46 @@
     </a>
 
     <script>
+        // SERVICE CARD CYCLING ANIMATION
+        const cards = document.querySelectorAll('.card');
+        let currentCardIndex = 0;
+        let cyclingActive = true;
+
+        function cycleCards() {
+            if (!cyclingActive) return;
+
+            // Remove active class from all cards
+            cards.forEach(card => card.classList.remove('active'));
+
+            // Add active class to current card
+            cards[currentCardIndex].classList.add('active');
+
+            // Move to next card
+            currentCardIndex = (currentCardIndex + 1) % cards.length;
+
+            // Cycle every 3 seconds
+            setTimeout(cycleCards, 3000);
+        }
+
+        // Add hover listeners to stop cycling when hovering
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                cyclingActive = false;
+                // Keep the hovered card highlighted
+            });
+
+            card.addEventListener('mouseleave', () => {
+                cyclingActive = true;
+                // Remove active class to resume cycling
+                cards.forEach(c => c.classList.remove('active'));
+                cycleCards();
+            });
+        });
+
+        // Start cycling on page load
+        cycleCards();
+
+        // BOOKING FORM
         function sendBooking(e) {
             e.preventDefault();
 
