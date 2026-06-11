@@ -263,6 +263,14 @@
             margin: 0 auto;
         }
 
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #d4af37;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
         input, textarea {
             display: block;
             width: 100%;
@@ -403,6 +411,28 @@
             transform: scale(1.05);
         }
 
+        /* ACCESSIBILITY */
+        :focus-visible {
+            outline: 2px solid #d4af37;
+            outline-offset: 2px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
         /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             header h1 {
@@ -449,28 +479,6 @@
                 font-size: 24px;
             }
         }
-
-        /* ACCESSIBILITY */
-        :focus-visible {
-            outline: 2px solid #d4af37;
-            outline-offset: 2px;
-        }
-
-        /* ANIMATIONS */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section {
-            animation: fadeInUp 0.8s ease-out;
-        }
     </style>
 </head>
 
@@ -482,79 +490,91 @@
         <p>Where Passion Meets Purpose</p>
     </header>
 
-    <div class="hero">
-        <img class="hero-img" id="cycleImg" src="royals_logo2.png" alt="Salon Logo">
-    </div>
-
-    <div class="section">
-        <h2>Our Services</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Hair</h3>
-                <p>Professional styling & treatments</p>
-            </div>
-            <div class="card">
-                <h3>Nails</h3>
-                <p>Beauty and nail care services</p>
-            </div>
-            <div class="card">
-                <h3>Massage</h3>
-                <p>Relaxation and body therapy</p>
-            </div>
-            <div class="card">
-                <h3>Lashes</h3>
-                <p>Elegant lash extensions</p>
-            </div>
-            <div class="card">
-                <h3>Brows</h3>
-                <p>Brow shaping & tinting</p>
-            </div>
-            <div class="card">
-                <h3>Waxing</h3>
-                <p>Smooth skin treatments</p>
-            </div>
+    <main>
+        <div class="hero">
+            <img class="hero-img" id="cycleImg" src="royals_logo2.png" alt="Royals by Eve Salon Hero Image">
         </div>
-    </div>
 
-    <div class="booking-section">
-        <h2 style="margin-bottom: 40px;">Book Your Appointment</h2>
-        <div class="form-container">
-            <form onsubmit="sendBooking(event)">
-                <input type="text" id="name" placeholder="Your Full Name" required>
-                <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9+ -]{10,}" required>
-                <input type="date" id="date" required>
-                <input type="email" id="email" placeholder="Email Address (optional)">
-                <textarea id="service" placeholder="Select service or additional notes" rows="3"></textarea>
-                <button type="submit">Book Now</button>
-            </form>
-        </div>
-    </div>
+        <section class="section">
+            <h2>Our Services</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Hair</h3>
+                    <p>Professional styling & treatments</p>
+                </div>
+                <div class="card">
+                    <h3>Nails</h3>
+                    <p>Beauty and nail care services</p>
+                </div>
+                <div class="card">
+                    <h3>Massage</h3>
+                    <p>Relaxation and body therapy</p>
+                </div>
+                <div class="card">
+                    <h3>Lashes</h3>
+                    <p>Elegant lash extensions</p>
+                </div>
+                <div class="card">
+                    <h3>Brows</h3>
+                    <p>Brow shaping & tinting</p>
+                </div>
+                <div class="card">
+                    <h3>Waxing</h3>
+                    <p>Smooth skin treatments</p>
+                </div>
+            </div>
+        </section>
 
-    <div class="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <p><strong>📞 Phone</strong></p>
-                <p>064 517 4088</p>
+        <section class="booking-section">
+            <h2 style="margin-bottom: 40px;">Book Your Appointment</h2>
+            <div class="form-container">
+                <form onsubmit="sendBooking(event)">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" placeholder="Your Full Name" required>
+                    
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9+ -]{10,}" required>
+                    
+                    <label for="date">Preferred Date *</label>
+                    <input type="date" id="date" required>
+                    
+                    <label for="email">Email Address (optional)</label>
+                    <input type="email" id="email" placeholder="Email Address">
+                    
+                    <label for="service">Service or Additional Notes</label>
+                    <textarea id="service" placeholder="Select service or additional notes" rows="3"></textarea>
+                    
+                    <button type="submit">Book Now</button>
+                </form>
             </div>
-            <div class="contact-item">
-                <p><strong>📍 Location</strong></p>
-                <p>Cnr 5th Avenue & Horwood Street<br>Dowerglen, Edenvale</p>
+        </section>
+
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p><strong>📞 Phone</strong></p>
+                    <p><a href="tel:+27645174088">064 517 4088</a></p>
+                </div>
+                <div class="contact-item">
+                    <p><strong>📍 Location</strong></p>
+                    <p>Cnr 5th Avenue & Horwood Street<br>Dowerglen, Edenvale</p>
+                </div>
+                <div class="contact-item">
+                    <p><strong>📷 Instagram</strong></p>
+                    <p><a href="https://www.instagram.com/royalsbyeve/" target="_blank" rel="noopener noreferrer">@royalsbyeve</a></p>
+                </div>
             </div>
-            <div class="contact-item">
-                <p><strong>📷 Instagram</strong></p>
-                <p><a href="https://www.instagram.com/royalsbyeve/" target="_blank" rel="noopener noreferrer">@royalsbyeve</a></p>
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Royals by Eve. All rights reserved.</p>
     </footer>
 
     <!-- WhatsApp Button with Font Awesome Icon -->
-    <a class="whatsapp-btn" href="https://wa.me/27645174088?text=Hello%20Royals%20by%20Eve%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+    <a class="whatsapp-btn" href="https://wa.me/27645174088?text=Hello%20Royals%20by%20Eve%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <!-- Booking Script -->
