@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Royals by Eve</title>
 
 <!-- Elegant Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -225,10 +225,12 @@ a.whatsapp {
 <div class="section">
     <h2>Book Appointment</h2>
 
-    <form onsubmit="alert('Booking sent! We will contact you.'); return false;">
-        <input type="text" placeholder="Name" required><br><br>
-        <input type="tel" placeholder="Phone" required><br><br>
-        <input type="date" required><br><br>
+    <!-- ✅ WHATSAPP BOOKING FORM -->
+    <form onsubmit="sendBooking(event)">
+        <input type="text" id="name" placeholder="Name" required><br><br>
+        <input type="tel" id="phone" placeholder="Phone" required><br><br>
+        <input type="date" id="date" required><br><br>
+
         <button type="submit">Submit Booking</button>
     </form>
 </div>
@@ -246,6 +248,27 @@ a.whatsapp {
 <a class="whatsapp" href="https://wa.me/27645174088" target="_blank">
     WhatsApp Us
 </a>
+
+<!-- ✅ WHATSAPP BOOKING SCRIPT -->
+<script>
+function sendBooking(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let date = document.getElementById("date").value;
+
+    let message =
+        `New Booking:%0A` +
+        `Name: ${name}%0A` +
+        `Phone: ${phone}%0A` +
+        `Date: ${date}`;
+
+    let whatsappURL = "https://wa.me/27645174088?text=" + message;
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
 
 </body>
 </html>
