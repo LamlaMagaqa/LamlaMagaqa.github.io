@@ -4,254 +4,258 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Royals by Eve - Premium Beauty & Wellness Salon">
-    <title>Royals by Eve - Premium Beauty Services</title>
+    <title>Royals by Eve — Premium Beauty & Wellness</title>
 
-    <!-- Professional Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root{
+            --bg:#0f0f10;
+            --surface:#121212;
+            --muted:#bdb6a0;
+            --accent:#d4af37; /* gold */
+            --card:#141414;
+            --radius:10px;
+            --max-width:1100px;
         }
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0;font-family:'Montserrat',sans-serif;background:linear-gradient(180deg,var(--bg),#111);color:#eaeaea}
+        a{color:var(--accent);text-decoration:none}
+        a:hover{text-decoration:underline}
 
-        html {
-            scroll-behavior: smooth;
+        /* Page container */
+        .wrap{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+        /* Header */
+        header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0}
+        .brand{display:flex;align-items:center;gap:14px}
+        .brand img{height:56px;width:auto;display:block}
+        .brand h1{font-family:'Playfair Display',serif;color:var(--accent);font-size:1.25rem;margin:0;letter-spacing:1px}
+        nav.site-nav{display:flex;gap:18px;align-items:center}
+        nav.site-nav a{font-weight:600;color:var(--muted);font-size:0.95rem;padding:8px 12px;border-radius:8px}
+        nav.site-nav a:hover{color:#fff;background:rgba(212,175,55,0.06)}
+
+        /* Hero */
+        .hero{background:linear-gradient(180deg,rgba(212,175,55,0.02),transparent);border-radius:var(--radius);padding:48px;display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin:20px 0}
+        .hero-left{flex:1 1 420px}
+        .hero h2{font-family:'Playfair Display',serif;color:#fff;font-size:2rem;margin:0 0 10px}
+        .hero p.lead{color:var(--muted);font-size:1rem;margin:0 0 18px;line-height:1.6}
+        .hero-cta{display:flex;gap:12px}
+        .btn{background:var(--accent);color:#111;padding:12px 18px;border-radius:8px;font-weight:700;border:none;cursor:pointer}
+        .btn.secondary{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
+
+        .hero-image{flex:0 0 300px;display:flex;justify-content:center}
+        .hero-image img{max-width:100%;height:auto;border-radius:8px;filter:brightness(1.05)}
+
+        /* Sections */
+        section{margin:36px 0;padding:24px;border-radius:10px}
+
+        /* Services grid */
+        .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+        .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);min-height:170px;display:flex;flex-direction:column;justify-content:flex-start;gap:10px}
+        .card h3{margin:0;font-family:'Playfair Display',serif;color:var(--accent);font-size:1.05rem}
+        .card p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.5}
+
+        /* Booking form */
+        .booking{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:12px}
+        .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+        label{font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px}
+        input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff;font-size:0.95rem}
+        textarea{min-height:90px}
+
+        /* Contact */
+        .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+        .contact-item{background:var(--surface);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+        .contact-item i{color:var(--accent);font-size:1.25rem}
+        .contact-item p{margin:8px 0 0;color:var(--muted);font-size:0.95rem}
+
+        /* Social */
+        .socials{display:flex;gap:10px;align-items:center}
+        .social{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+        .social i{font-size:1.1rem;color:var(--accent)}
+
+        footer{padding:18px 0;color:var(--muted);font-size:0.95rem;text-align:center}
+
+        /* WhatsApp floating */
+        .whatsapp-btn{position:fixed;right:18px;bottom:18px;background:#25D366;color:white;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.35);z-index:999}
+
+        /* Responsive tweaks */
+        @media(max-width:700px){
+            header{flex-direction:column;align-items:flex-start}
+            .hero{padding:20px}
+            .hero h2{font-size:1.5rem}
+            .brand img{height:48px}
         }
-
-        body {
-            font-family: 'Cormorant Garamond', serif;
-            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
-            color: #f5f5f5;
-            line-height: 1.9;
-            overflow-x: hidden;
-            position: relative;
-            letter-spacing: 0.5px;
-        }
-
-        /* LUXE BACKGROUND ANIMATION */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 3px,
-                rgba(212, 175, 55, 0.02) 3px,
-                rgba(212, 175, 55, 0.02) 6px
-            );
-            animation: waveMove 30s linear infinite;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        @keyframes waveMove {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* LUXURY GLOW EFFECT */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(15, 15, 15, 0.95) 100%);
-            text-align: center;
-            padding: 30px 20px 20px;
-            border-bottom: 2px solid #d4af37;
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
-            backdrop-filter: blur(10px);
-        }
-
-        .site-nav {
-            margin-top: 12px;
-        }
-
-        .site-nav a {
-            color: #e0d8b0;
-            text-decoration: none;
-            margin: 0 12px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .site-nav a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        header img {
-            max-width: 220px;
-            height: auto;
-            margin-bottom: 8px;
-            animation: luxeGlow 8s ease-in-out infinite;
-            transition: transform 0.3s ease;
-        }
-
-        header h1 {
-            color: #d4af37;
-            margin: 8px 0 6px;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            font-weight: 800;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            text-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        header p {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            color: #c9a961;
-            font-weight: 300;
-            text-transform: uppercase;
-        }
-
-        /* rest of styles remain unchanged... (omitted here for brevity in message) */
     </style>
 </head>
-
 <body>
-
-    <header>
-        <img src="royals_logo.png" alt="Royals by Eve Logo">
-        <h1>Royals by Eve</h1>
-        <div class="divider"></div>
-        <p>Where Passion Meets Purpose</p>
-        <nav class="site-nav" aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="privacy.html">Privacy Policy</a>
-        </nav>
-    </header>
-
-    <main>
-        <div class="hero">
-            <img class="hero-img" src="royals_logo2.png" alt="Royals by Eve Salon Hero Image">
-        </div>
-
-        <!-- content omitted for brevity; unchanged -->
-
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p><strong>Phone</strong></p>
-                    <p><a href="tel:+27645174088">064 517 4088</a></p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p><strong>Location</strong></p>
-                    <p>Cnr 5th Avenue & Horwood Street<br>Dowerglen, Edenvale</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p><strong>Email</strong></p>
-                    <p>
-                        <a href="mailto:leah@letris.co.za">leah@letris.co.za</a>
-                    </p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-clock"></i>
-                    <p><strong>Salon Hours</strong></p>
-                    <ul class="hours-list">
-                        <li>Monday: 8h30am – 19h00pm</li>
-                        <li>Tuesday: 8h30am – 19h00pm</li>
-                        <li>Wednesday: 8h30am – 19h00pm</li>
-                        <li>Thursday: 8h30am – 19h00pm</li>
-                        <li>Friday: 8h30am – 19h00pm</li>
-                        <li>Saturday: 8h00am – 16h00pm</li>
-                        <li>Sunday: 8h00am – 16h00pm</li>
-                        <li>Public Holidays: 8h00am – 13h00pm</li>
-                    </ul>
-                    <p class="hours-note">*Please note that service availability may vary throughout our operating hours. Our Hair and Nail departments conclude services at 6:00 PM on weekdays, and certain treatments may not be available during all trading hours. We recommend booking in advance to secure your preferred service and appointment time.</p>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <img src="royals_logo.png" alt="Royals by Eve logo">
+                <div>
+                    <h1>Royals by Eve</h1>
+                    <div style="font-size:0.85rem;color:var(--muted)">Premium Beauty & Wellness</div>
                 </div>
             </div>
-        </section>
 
-        <section class="instagram-section">
-            <h2>Follow Us</h2>
-            <p style="color: #c9a961; font-size: 1.15rem; margin-bottom: 40px; letter-spacing: 1px;">See behind-the-scenes and our latest work on Instagram, Facebook and TikTok.</p>
-            <div class="instagram-feed">
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')" title="Instagram" role="link" aria-label="Open Instagram">
-                    <i class="fab fa-instagram social-icon" aria-hidden="true"></i>
-                    <div class="social-label">Instagram</div>
-                </div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.facebook.com/share/1bV4PuWwL5/?mibextid=wwXIfr', '_blank')" title="Facebook" role="link" aria-label="Open Facebook">
-                    <i class="fab fa-facebook-f social-icon" aria-hidden="true"></i>
-                    <div class="social-label">Facebook</div>
-                </div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.tiktok.com/@royals.by.eve?_r=1&_t=ZS-97NJbSQeRbJ', '_blank')" title="TikTok" role="link" aria-label="Open TikTok">
-                    <i class="fab fa-tiktok social-icon" aria-hidden="true"></i>
-                    <div class="social-label">TikTok</div>
-                </div>
-            </div>
-        </section>
-    </main>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#contact">Contact</a>
+                <a class="btn secondary" href="https://wa.me/27645174088?text=Hello%20Royals%20by%20Eve%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer">Book Now</a>
+            </nav>
+        </header>
 
-    <footer>
-        <p>&copy; 2026 Royals by Eve. All Rights Reserved. | Premium Beauty & Wellness Salon</p>
-        <p style="margin-top:8px;"><a href="privacy.html" style="color:#c9a961; text-decoration:none;">Privacy Policy</a></p>
-    </footer>
+        <main>
+            <section class="hero" aria-label="Hero">
+                <div class="hero-left">
+                    <h2>Expert care. Luxurious results.</h2>
+                    <p class="lead">Royals by Eve provides premium salon services — hair, nails, brows, lashes and bespoke beauty treatments in Dowerglen, Edenvale. Professional team, personalized service and a calm, refined environment.</p>
+                    <div class="hero-cta">
+                        <a class="btn" href="https://wa.me/27645174088?text=Hi%20I%20would%20like%20to%20book" target="_blank" rel="noopener noreferrer">Book on WhatsApp</a>
+                        <a class="btn secondary" href="#services">View Services</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="royals_hero.jpg" alt="Salon interior" loading="lazy">
+                </div>
+            </section>
 
-    <!-- WhatsApp Button with Font Awesome Icon -->
-    <a class="whatsapp-btn" href="https://wa.me/27645174088?text=Hello%20Royals%20by%20Eve%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+            <section id="services">
+                <h3 style="font-family:'Playfair Display',serif;color:var(--accent);margin:0 0 14px">Our Services</h3>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Hair & Styling</h3>
+                        <p>Cutting, colouring, styling and treatments tailored to your hair type and lifestyle.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Nails & Manicure</h3>
+                        <p>Classic and gel manicures, pedicures and nail enhancements with hygienic standards.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Brows & Lashes</h3>
+                        <p>Shaping, tinting and lift services to frame your eyes and enhance your features.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Skin & Facials</h3>
+                        <p>Professional facials and skincare treatments to restore radiance and health.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="booking" aria-labelledby="booking-heading">
+                <h3 id="booking-heading" style="margin:0 0 12px;font-family:'Playfair Display',serif;color:var(--accent)">Book an Appointment</h3>
+                <form onsubmit="sendBooking(event)" style="margin-top:10px">
+                    <div class="form-grid">
+                        <div>
+                            <label for="name">Full name</label>
+                            <input id="name" name="name" required>
+                        </div>
+                        <div>
+                            <label for="phone">Phone</label>
+                            <input id="phone" name="phone" required>
+                        </div>
+                        <div>
+                            <label for="email">Email (optional)</label>
+                            <input id="email" name="email" type="email">
+                        </div>
+                        <div>
+                            <label for="service">Service / Notes</label>
+                            <select id="service" name="service">
+                                <option value="">Select (optional)</option>
+                                <option>Hair & Styling</option>
+                                <option>Nails</option>
+                                <option>Brows & Lashes</option>
+                                <option>Facial / Skin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:12px">
+                        <div>
+                            <label for="date">Preferred date</label>
+                            <input id="date" name="date" type="date" required>
+                        </div>
+                        <div>
+                            <label for="time">Preferred time</label>
+                            <input id="time" name="time" type="time" required>
+                        </div>
+                    </div>
+                    <div style="margin-top:12px">
+                        <label for="notes">Additional notes</label>
+                        <textarea id="notes" name="notes" placeholder="Any preferences or notes (optional)"></textarea>
+                    </div>
+                    <div style="margin-top:12px">
+                        <button class="btn" type="submit">Send Booking</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="contact">
+                <h3 style="font-family:'Playfair Display',serif;color:var(--accent);margin:0 0 14px">Contact & Location</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <p><strong>Phone</strong><br><a href="tel:+27645174088">064 517 4088</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <p><strong>Address</strong><br>Cnr 5th Avenue & Horwood Street<br>Dowerglen, Edenvale</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <p><strong>Email</strong><br><a href="mailto:leah@letris.co.za">leah@letris.co.za</a></p>
+                    </div>
+                </div>
+                <div style="margin-top:14px;display:flex;justify-content:flex-start;gap:10px;align-items:center">
+                    <div class="socials">
+                        <a class="social" href="https://www.instagram.com/royalsbyeve/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i>Instagram</a>
+                        <a class="social" href="https://www.facebook.com/share/1bV4PuWwL5/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i>Facebook</a>
+                        <a class="social" href="https://www.tiktok.com/@royals.by.eve" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok" aria-hidden="true"></i>TikTok</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div>&copy; 2026 Royals by Eve — Premium Beauty & Wellness</div>
+            <div style="margin-top:6px"><a href="privacy.html">Privacy Policy</a></div>
+        </footer>
+
+    </div>
+
+    <!-- WhatsApp floating -->
+    <a class="whatsapp-btn" href="https://wa.me/27645174088?text=Hello%20Royals%20by%20Eve%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp" style="font-size:20px"></i>
     </a>
 
-    <!-- Booking Script -->
     <script>
-        function sendBooking(e) {
+        function sendBooking(e){
             e.preventDefault();
-
-            const name = document.getElementById("name").value.trim();
-            const phone = document.getElementById("phone").value.trim();
-            const date = document.getElementById("date").value;
-            const time = document.getElementById("time").value;
-            const email = document.getElementById("email").value.trim();
-            const service = document.getElementById("service").value.trim();
-
-            if (!name || !phone || !date || !time) {
-                alert("Please fill in all required fields including date and time.");
-                return;
-            }
-
-            const message = `*New Booking Request*%0A%0A` +
-                `*Name:* ${encodeURIComponent(name)}%0A` +
-                `*Phone:* ${encodeURIComponent(phone)}%0A` +
-                `*Preferred Date:* ${date}%0A` +
-                `*Preferred Time:* ${time}%0A` +
-                (email ? `*Email:* ${encodeURIComponent(email)}%0A` : '') +
-                (service ? `*Service/Notes:* ${encodeURIComponent(service)}%0A` : '') +
-                `%0AThank you! We will confirm shortly.`;
-
-            const whatsappURL = "https://wa.me/27645174088?text=" + message;
-            window.open(whatsappURL, "_blank", "noopener,noreferrer");
-
-            // Reset form
-            document.querySelector("form").reset();
+            const name=document.getElementById('name').value.trim();
+            const phone=document.getElementById('phone').value.trim();
+            const date=document.getElementById('date').value;
+            const time=document.getElementById('time').value;
+            const email=document.getElementById('email').value.trim();
+            const service=document.getElementById('service').value;
+            const notes=document.getElementById('notes').value.trim();
+            if(!name||!phone||!date||!time){alert('Please fill in required fields');return}
+            const message = '*New Booking Request*%0A%0A' +
+                '*Name:* ' + encodeURIComponent(name) + '%0A' +
+                '*Phone:* ' + encodeURIComponent(phone) + '%0A' +
+                '*Date:* ' + date + '%0A' +
+                '*Time:* ' + time + '%0A' +
+                (email? '*Email:* ' + encodeURIComponent(email) + '%0A':'') +
+                (service? '*Service:* ' + encodeURIComponent(service) + '%0A':'') +
+                (notes? '*Notes:* ' + encodeURIComponent(notes) + '%0A':'') +
+                '%0AThank you! We will confirm shortly.';
+            window.open('https://wa.me/27645174088?text=' + message,'_blank','noopener');
+            e.target.reset();
         }
     </script>
-
 </body>
 </html>
