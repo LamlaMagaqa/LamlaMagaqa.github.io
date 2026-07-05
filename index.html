@@ -505,7 +505,7 @@
             line-height: 1.5;
         }
 
-        /* INSTAGRAM SECTION */
+        /* INSTAGRAM / SOCIAL SECTION */
         .instagram-section {
             background: linear-gradient(135deg, rgba(15, 15, 15, 0.8) 0%, rgba(20, 20, 20, 0.8) 100%);
             padding: 80px 60px;
@@ -514,29 +514,46 @@
 
         .instagram-feed {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
             max-width: 1200px;
             margin: 60px auto 0;
         }
 
         .instagram-placeholder {
-            aspect-ratio: 1;
+            aspect-ratio: 1/1;
             background: linear-gradient(135deg, rgba(20, 20, 20, 0.8) 0%, rgba(15, 15, 15, 0.8) 100%);
             border: 1.5px solid #d4af37;
-            border-radius: 4px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.5s ease;
+            transition: all 0.35s ease;
             overflow: hidden;
+            flex-direction: column;
+            padding: 20px;
         }
 
         .instagram-placeholder:hover {
-            transform: scale(1.03);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 18px 40px rgba(212, 175, 55, 0.22);
             border-color: #e8c856;
+        }
+
+        .social-icon {
+            font-size: 2.2rem;
+            color: #d4af37;
+            margin-bottom: 12px;
+        }
+
+        .social-label {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            margin-top: 6px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            font-weight: 600;
         }
 
         /* FOOTER */
@@ -693,7 +710,7 @@
 
             .instagram-feed {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                gap: 18px;
             }
 
             .form-row {
@@ -865,14 +882,33 @@
 
         <section class="instagram-section">
             <h2>Follow Us</h2>
-            <p style="color: #c9a961; font-size: 1.15rem; margin-bottom: 40px; letter-spacing: 1px;">See behind-the-scenes and our latest work on Instagram.</p>
+            <p style="color: #c9a961; font-size: 1.15rem; margin-bottom: 40px; letter-spacing: 1px;">See behind-the-scenes and our latest work on Instagram, Facebook and TikTok.</p>
             <div class="instagram-feed">
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
-                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')" title="Instagram">
+                    <i class="fab fa-instagram social-icon" aria-hidden="true"></i>
+                    <div class="social-label">Instagram</div>
+                </div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.facebook.com/share/1bV4PuWwL5/?mibextid=wwXIfr', '_blank')" title="Facebook">
+                    <i class="fab fa-facebook-f social-icon" aria-hidden="true"></i>
+                    <div class="social-label">Facebook</div>
+                </div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.tiktok.com/@royals.by.eve?_r=1&_t=ZS-97NJbSQeRbJ', '_blank')" title="TikTok">
+                    <i class="fab fa-tiktok social-icon" aria-hidden="true"></i>
+                    <div class="social-label">TikTok</div>
+                </div>
+
+                <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')" title="Instagram">
+                    <i class="fab fa-instagram social-icon" aria-hidden="true"></i>
+                    <div class="social-label">Instagram</div>
+                </div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.facebook.com/share/1bV4PuWwL5/?mibextid=wwXIfr', '_blank')" title="Facebook">
+                    <i class="fab fa-facebook-f social-icon" aria-hidden="true"></i>
+                    <div class="social-label">Facebook</div>
+                </div>
+                <div class="instagram-placeholder" onclick="window.open('https://www.tiktok.com/@royals.by.eve?_r=1&_t=ZS-97NJbSQeRbJ', '_blank')" title="TikTok">
+                    <i class="fab fa-tiktok social-icon" aria-hidden="true"></i>
+                    <div class="social-label">TikTok</div>
+                </div>
             </div>
         </section>
     </main>
