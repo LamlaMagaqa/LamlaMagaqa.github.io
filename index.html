@@ -7,7 +7,7 @@
     <title>Royals by Eve - Premium Beauty Services</title>
 
     <!-- Professional Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -483,6 +483,28 @@
             text-decoration: underline;
         }
 
+        /* HOURS LIST STYLES */
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            color: #e0e0e0;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .hours-list li {
+            margin: 6px 0;
+            font-size: 1rem;
+        }
+
+        .hours-note {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            color: #cfc6a2;
+            line-height: 1.5;
+        }
+
         /* INSTAGRAM SECTION */
         .instagram-section {
             background: linear-gradient(135deg, rgba(15, 15, 15, 0.8) 0%, rgba(20, 20, 20, 0.8) 100%);
@@ -823,12 +845,27 @@
                     <p><strong>Email</strong></p>
                     <p><a href="mailto:info@royalsbyeve.com">Inquiries Welcome</a></p>
                 </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <p><strong>Salon Hours</strong></p>
+                    <ul class="hours-list">
+                        <li>Monday: 8h30am – 19h00pm</li>
+                        <li>Tuesday: 8h30am – 19h00pm</li>
+                        <li>Wednesday: 8h30am – 19h00pm</li>
+                        <li>Thursday: 8h30am – 19h00pm</li>
+                        <li>Friday: 8h30am – 19h00pm</li>
+                        <li>Saturday: 8h00am – 16h00pm</li>
+                        <li>Sunday: 8h00am – 16h00pm</li>
+                        <li>Public Holidays: 8h00am – 13h00pm</li>
+                    </ul>
+                    <p class="hours-note">*Please note that service availability may vary throughout our operating hours. Our Hair and Nail departments conclude services at 6:00 PM on weekdays, and certain treatments may not be available during all trading hours. We recommend booking in advance to secure your preferred service and appointment time.</p>
+                </div>
             </div>
         </section>
 
         <section class="instagram-section">
             <h2>Follow Us</h2>
-            <p style="color: #c9a961; font-size: 1.15rem; margin-bottom: 40px; letter-spacing: 1px;"><a href="https://www.instagram.com/royalsbyeve/" target="_blank" rel="noopener noreferrer" style="color: #d4af37; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e8c856'" onmouseout="this.style.color='#d4af37'">@royalsbyeve</a></p>
+            <p style="color: #c9a961; font-size: 1.15rem; margin-bottom: 40px; letter-spacing: 1px;">See behind-the-scenes and our latest work on Instagram.</p>
             <div class="instagram-feed">
                 <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
                 <div class="instagram-placeholder" onclick="window.open('https://www.instagram.com/royalsbyeve/', '_blank')"></div>
@@ -845,7 +882,7 @@
     </footer>
 
     <!-- WhatsApp Button with Font Awesome Icon -->
-    <a class="whatsapp-btn" href="https://wa.me/27645174088?text=Hello%20Royals%20by%20Eve%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" aria-label="Contact us on WhatsApp">
+    <a class="whatsapp-btn" href="https://wa.me/27645174088?text=Hello%20Royals%20by%20Eve%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
