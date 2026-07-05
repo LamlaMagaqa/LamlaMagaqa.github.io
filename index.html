@@ -30,15 +30,18 @@
         .wrap{max-width:var(--max-width);margin:0 auto;padding:28px}
 
         /* Header */
-        header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0}
-        .brand{display:flex;align-items:center;gap:14px}
-        /* Larger, well-aligned logo with entrance + gentle float animation - 2x BIGGER */
-        .logo-container{width:240px;height:240px;display:block;overflow:visible;flex:0 0 240px;display:flex;align-items:center;justify-content:center}
-        .brand img{height:184px;width:auto;display:block;transform-origin:center center;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.45);animation:logoEntrance 700ms cubic-bezier(.2,.9,.3,1) forwards, logoFloat 4s ease-in-out infinite}
-        .brand h1{font-family:'Playfair Display',serif;color:var(--accent);font-size:1.25rem;margin:0;letter-spacing:1px}
-        nav.site-nav{display:flex;gap:18px;align-items:center}
-        nav.site-nav a{font-weight:600;color:var(--muted);font-size:0.95rem;padding:8px 12px;border-radius:8px;position:relative}
-        nav.site-nav a::after{content:'';height:2px;background:var(--accent);position:absolute;left:12px;right:12px;bottom:6px;transform:scaleX(0);transform-origin:left center;transition:transform .28s ease}
+        header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;border-bottom:1px solid rgba(212,175,55,0.1)}
+        .brand{display:flex;align-items:center;gap:20px}
+        /* Extra Large Logo - 3x bigger */
+        .logo-container{width:280px;height:280px;display:block;overflow:visible;flex:0 0 280px;display:flex;align-items:center;justify-content:center}
+        .brand img{height:220px;width:auto;display:block;transform-origin:center center;border-radius:12px;box-shadow:0 12px 32px rgba(212,175,55,0.2);animation:logoEntrance 700ms cubic-bezier(.2,.9,.3,1) forwards, logoFloat 4s ease-in-out infinite}
+        .brand h1{font-family:'Playfair Display',serif;color:var(--accent);font-size:1.8rem;margin:0;letter-spacing:2px;font-weight:700}
+        .brand > div:last-child{display:flex;flex-direction:column;gap:4px}
+        .brand > div:last-child > div{font-size:0.9rem;color:var(--muted);letter-spacing:0.5px}
+        nav.site-nav{display:flex;gap:20px;align-items:center}
+        nav.site-nav a{font-weight:600;color:var(--muted);font-size:0.95rem;padding:10px 16px;border-radius:8px;position:relative;transition:color .28s ease}
+        nav.site-nav a::after{content:'';height:2px;background:var(--accent);position:absolute;left:16px;right:16px;bottom:8px;transform:scaleX(0);transform-origin:left center;transition:transform .28s ease}
+        nav.site-nav a:hover{color:var(--accent)}
         nav.site-nav a:hover::after{transform:scaleX(1)}
 
         @keyframes logoEntrance{
@@ -48,81 +51,112 @@
         }
         @keyframes logoFloat{
             0%{transform:translateY(0) rotate(0)}
-            50%{transform:translateY(-6px) rotate(-0.5deg)}
+            50%{transform:translateY(-8px) rotate(-0.5deg)}
             100%{transform:translateY(0) rotate(0)}
         }
 
         /* Hero */
-        .hero{background:linear-gradient(180deg,rgba(212,175,55,0.02),transparent);border-radius:var(--radius);padding:48px;display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin:20px 0}
+        .hero{background:linear-gradient(180deg,rgba(212,175,55,0.05),rgba(212,175,55,0.01));border-radius:var(--radius);padding:64px 48px;display:flex;flex-wrap:wrap;align-items:center;gap:32px;margin:28px 0;border:1px solid rgba(212,175,55,0.1)}
         .hero-left{flex:1 1 420px}
-        .hero h2{font-family:'Playfair Display',serif;color:#fff;font-size:2rem;margin:0 0 10px}
-        .hero p.lead{color:var(--muted);font-size:1rem;margin:0 0 18px;line-height:1.6}
-        .hero-cta{display:flex;gap:12px}
-        .btn{background:var(--accent);color:#111;padding:12px 18px;border-radius:8px;font-weight:700;border:none;cursor:pointer}
-        .btn.secondary{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
+        .hero h2{font-family:'Playfair Display',serif;color:#fff;font-size:2.4rem;margin:0 0 16px;line-height:1.2}
+        .hero p.lead{color:var(--muted);font-size:1.05rem;margin:0 0 24px;line-height:1.7}
+        .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+        .btn{background:var(--accent);color:#111;padding:14px 28px;border-radius:8px;font-weight:700;border:none;cursor:pointer;transition:all .28s ease}
+        .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,175,55,0.3)}
+        .btn.secondary{background:transparent;color:var(--muted);border:1.5px solid rgba(212,175,55,0.4);transition:all .28s ease}
+        .btn.secondary:hover{background:rgba(212,175,55,0.1);border-color:var(--accent);color:var(--accent)}
 
-        .hero-image{flex:0 0 320px;display:flex;justify-content:center}
-        .hero-image img{max-width:100%;height:auto;border-radius:8px;filter:brightness(1.05);animation:heroFloat 8s ease-in-out infinite;transition:transform .28s ease}
-        .hero-image img:hover{transform:translateY(-6px) scale(1.02)}
+        .hero-image{flex:0 0 340px;display:flex;justify-content:center}
+        .hero-image img{max-width:100%;height:auto;border-radius:12px;filter:brightness(1.05);box-shadow:0 16px 40px rgba(0,0,0,0.4);animation:heroFloat 8s ease-in-out infinite;transition:transform .28s ease}
+        .hero-image img:hover{transform:translateY(-8px) scale(1.02)}
 
         @keyframes heroFloat{
             0%{transform:translateY(0)}
-            50%{transform:translateY(-8px)}
+            50%{transform:translateY(-12px)}
             100%{transform:translateY(0)}
         }
 
         /* Sections */
-        section{margin:36px 0;padding:24px;border-radius:10px}
+        section{margin:48px 0;padding:32px}
 
-        /* Services grid */
-        .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-        .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);min-height:170px;display:flex;flex-direction:column;justify-content:flex-start;gap:10px;transform:translateY(12px);opacity:0;animation:cardReveal .6s cubic-bezier(.2,.8,.3,1) forwards;transition:all .3s cubic-bezier(.2,.8,.3,1);cursor:pointer}
+        /* Services grid - Enhanced */
+        .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+        .card{background:linear-gradient(135deg, rgba(20,20,20,0.8), rgba(20,20,20,0.6));padding:28px;border-radius:16px;border:1.5px solid rgba(212,175,55,0.15);min-height:200px;display:flex;flex-direction:column;justify-content:flex-start;gap:14px;transform:translateY(12px);opacity:0;animation:cardReveal .6s cubic-bezier(.2,.8,.3,1) forwards;transition:all .4s cubic-bezier(.2,.8,.3,1);cursor:pointer;backdrop-filter:blur(10px)}
         .card:nth-child(1){animation-delay:.12s}
         .card:nth-child(2){animation-delay:.18s}
         .card:nth-child(3){animation-delay:.24s}
         .card:nth-child(4){animation-delay:.30s}
-        /* Hover highlight effect */
-        .card:hover{background:linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05));border:1px solid rgba(212,175,55,0.3);transform:translateY(-4px);box-shadow:0 12px 28px rgba(212,175,55,0.15)}
+        /* Enhanced Hover effect */
+        .card:hover{background:linear-gradient(135deg, rgba(212,175,55,0.2), rgba(212,175,55,0.08));border:1.5px solid rgba(212,175,55,0.5);transform:translateY(-8px);box-shadow:0 20px 48px rgba(212,175,55,0.2), inset 0 1px 0 rgba(255,255,255,0.1)}
         @keyframes cardReveal{to{transform:translateY(0);opacity:1}}
-        .card h3{margin:0;font-family:'Playfair Display',serif;color:var(--accent);font-size:1.05rem}
-        .card p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.5}
+        .card h3{margin:0;font-family:'Playfair Display',serif;color:var(--accent);font-size:1.3rem;position:relative;display:inline-block;transition:all .4s cubic-bezier(.2,.8,.3,1);font-weight:700;letter-spacing:0.5px}
+        /* Premium underline animation */
+        .card h3::before{content:'';position:absolute;bottom:-6px;left:0;width:0;height:3px;background:linear-gradient(90deg, var(--accent) 0%, rgba(212,175,55,0.4) 100%);transition:width .5s cubic-bezier(.2,.8,.3,1);border-radius:2px}
+        .card:hover h3{text-shadow:0 0 16px rgba(212,175,55,0.6);letter-spacing:1px;color:#fff}
+        .card:hover h3::before{width:100%}
+        .card p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.6;transition:color .4s ease}
+        .card:hover p{color:#d4d4d4}
 
         /* Booking form */
-        .booking{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:12px}
-        .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-        label{font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px}
-        input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff;font-size:0.95rem}
-        textarea{min-height:90px}
+        .booking{background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01));padding:32px;border-radius:16px;border:1px solid rgba(212,175,55,0.1)}
+        .booking h3{font-size:1.5rem}
+        .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+        label{font-size:0.85rem;color:var(--muted);display:block;margin-bottom:8px;font-weight:500;letter-spacing:0.5px}
+        input,textarea,select{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:#fff;font-size:0.95rem;transition:all .28s ease}
+        input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent);background:rgba(212,175,55,0.05);box-shadow:0 0 12px rgba(212,175,55,0.1)}
+        textarea{min-height:100px;resize:vertical}
 
         /* Contact */
-        .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-        .contact-item{background:var(--surface);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-        .contact-item i{color:var(--accent);font-size:1.25rem}
-        .contact-item p{margin:8px 0 0;color:var(--muted);font-size:0.95rem}
+        .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+        .contact-item{background:linear-gradient(135deg, rgba(20,20,20,0.8), rgba(20,20,20,0.6));padding:20px;border-radius:12px;border:1px solid rgba(212,175,55,0.15);transition:all .28s ease;backdrop-filter:blur(10px)}
+        .contact-item:hover{border-color:rgba(212,175,55,0.4);background:linear-gradient(135deg, rgba(212,175,55,0.1), rgba(212,175,55,0.05))}
+        .contact-item i{color:var(--accent);font-size:1.5rem}
+        .contact-item p{margin:12px 0 0;color:var(--muted);font-size:0.95rem}
+        .contact-item strong{color:var(--accent)}
 
         /* Social */
-        .socials{display:flex;gap:10px;align-items:center}
-        .social{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+        .socials{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+        .social{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;background:rgba(212,175,55,0.08);border:1.5px solid rgba(212,175,55,0.2);color:var(--muted);transition:all .28s ease;font-weight:500}
+        .social:hover{background:rgba(212,175,55,0.15);border-color:var(--accent);color:var(--accent)}
         .social i{font-size:1.1rem;color:var(--accent)}
 
-        footer{padding:18px 0;color:var(--muted);font-size:0.95rem;text-align:center}
+        footer{padding:24px 0;color:var(--muted);font-size:0.9rem;text-align:center;border-top:1px solid rgba(212,175,55,0.1)}
 
         /* WhatsApp floating */
-        .whatsapp-btn{position:fixed;right:18px;bottom:18px;background:#25D366;color:white;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:transform .3s ease,box-shadow .3s ease}
-        .whatsapp-btn:hover{transform:scale(1.1);box-shadow:0 8px 20px rgba(37,211,102,0.3)}
+        .whatsapp-btn{position:fixed;right:24px;bottom:24px;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:all .3s ease;z-index:999}
+        .whatsapp-btn:hover{transform:scale(1.15);box-shadow:0 8px 24px rgba(37,211,102,0.4)}
 
         /* Responsive tweaks */
-        @media(max-width:900px){
+        @media(max-width:1000px){
+            header{flex-direction:column;gap:16px;align-items:center;text-align:center}
+            .logo-container{width:220px;height:220px;flex:0 0 220px}
+            .brand img{height:170px}
+            .brand h1{font-size:1.5rem}
+            nav.site-nav{flex-wrap:wrap;justify-content:center}
+        }
+        @media(max-width:768px){
+            .wrap{padding:20px}
             .logo-container{width:160px;height:160px;flex:0 0 160px}
             .brand img{height:128px}
-            .hero-image{flex:0 0 260px}
+            .brand h1{font-size:1.2rem}
+            .hero{padding:32px 20px;gap:20px}
+            .hero h2{font-size:1.8rem}
+            .hero-image{flex:0 0 100%;max-width:300px}
+            .cards{grid-template-columns:1fr}
+            section{padding:20px}
+            header{border-bottom:none}
         }
-        @media(max-width:700px){
-            header{flex-direction:column;align-items:flex-start}
-            .hero{padding:20px}
-            .hero h2{font-size:1.5rem}
+        @media(max-width:480px){
             .logo-container{width:120px;height:120px;flex:0 0 120px}
             .brand img{height:92px}
+            .brand h1{font-size:1rem}
+            .hero h2{font-size:1.4rem}
+            .hero p.lead{font-size:0.95rem}
+            .hero-cta{gap:10px}
+            .btn{padding:12px 20px;font-size:0.9rem}
+            nav.site-nav{gap:10px}
+            .cards{gap:16px}
+            .card{padding:20px;min-height:160px}
         }
     </style>
 </head>
@@ -135,13 +169,13 @@
                 </div>
                 <div>
                     <h1>Royals by Eve</h1>
-                    <div style="font-size:0.85rem;color:var(--muted)">Premium Beauty & Wellness</div>
+                    <div>Premium Beauty & Wellness</div>
                 </div>
             </div>
 
             <nav class="site-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy Policy</a>
+                <a href="#services">Services</a>
                 <a href="#contact">Contact</a>
                 <a class="btn secondary" href="https://wa.me/27645174088?text=Hello%20Royals%20by%20Eve%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer">Book Now</a>
             </nav>
@@ -150,11 +184,11 @@
         <main>
             <section class="hero" aria-label="Hero">
                 <div class="hero-left">
-                    <h2>Expert care. Luxurious results.</h2>
-                    <p class="lead">Royals by Eve provides premium salon services — hair, nails, brows, lashes and bespoke beauty treatments in Dowerglen, Edenvale. Professional team, personalized service.</p>
+                    <h2>Expert Care. Luxurious Results.</h2>
+                    <p class="lead">Royals by Eve delivers premium salon services — hair, nails, brows, lashes and bespoke beauty treatments. Professional expertise meets personalized luxury in Dowerglen, Edenvale.</p>
                     <div class="hero-cta">
-                        <a class="btn" href="https://wa.me/27645174088?text=Hi%20I%20would%20like%20to%20book" target="_blank" rel="noopener noreferrer">Book on WhatsApp</a>
-                        <a class="btn secondary" href="#services">View Services</a>
+                        <a class="btn" href="https://wa.me/27645174088?text=Hi%20I%20would%20like%20to%20book" target="_blank" rel="noopener noreferrer">📲 Book on WhatsApp</a>
+                        <a class="btn secondary" href="#services">Explore Services</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -163,80 +197,80 @@
             </section>
 
             <section id="services">
-                <h3 style="font-family:'Playfair Display',serif;color:var(--accent);margin:0 0 14px">Our Services</h3>
+                <h3 style="font-family:'Playfair Display',serif;color:var(--accent);margin:0 0 28px;font-size:2rem;text-align:center;letter-spacing:1px">Our Premium Services</h3>
                 <div class="cards">
                     <article class="card">
-                        <h3>Hair & Styling</h3>
-                        <p>Cutting, colouring, styling and treatments tailored to your hair type and lifestyle.</p>
+                        <h3>💇 Hair & Styling</h3>
+                        <p>Expert cutting, colouring, and styling tailored to your hair type and lifestyle. Precision treatments designed to enhance your natural beauty.</p>
                     </article>
                     <article class="card">
-                        <h3>Nails & Manicure</h3>
-                        <p>Classic and gel manicures, pedicures and nail enhancements with hygienic standards.</p>
+                        <h3>💅 Nails & Manicure</h3>
+                        <p>Classic and gel manicures, pedicures, and nail enhancements with premium products. Hygienic standards and artistic precision in every detail.</p>
                     </article>
                     <article class="card">
-                        <h3>Brows & Lashes</h3>
-                        <p>Shaping, tinting and lift services to frame your eyes and enhance your features.</p>
+                        <h3>✨ Brows & Lashes</h3>
+                        <p>Professional brow shaping, tinting, and lash lift services. Frame your eyes beautifully and enhance your natural features with expert care.</p>
                     </article>
                     <article class="card">
-                        <h3>Skin & Facials</h3>
-                        <p>Professional facials and skincare treatments to restore radiance and health.</p>
+                        <h3>🌿 Skin & Facials</h3>
+                        <p>Professional facials and skincare treatments using premium products. Restore radiance, health, and luminosity to your skin.</p>
                     </article>
                 </div>
             </section>
 
             <section class="booking" aria-labelledby="booking-heading">
-                <h3 id="booking-heading" style="margin:0 0 12px;font-family:'Playfair Display',serif;color:var(--accent)">Book an Appointment</h3>
-                <form onsubmit="sendBooking(event)" style="margin-top:10px">
+                <h3 id="booking-heading" style="margin:0 0 16px;font-family:'Playfair Display',serif;color:var(--accent);font-size:1.6rem">Book Your Appointment</h3>
+                <form onsubmit="sendBooking(event)" style="margin-top:16px">
                     <div class="form-grid">
                         <div>
-                            <label for="name">Full name</label>
+                            <label for="name">Full Name</label>
                             <input id="name" name="name" required>
                         </div>
                         <div>
-                            <label for="phone">Phone</label>
+                            <label for="phone">Phone Number</label>
                             <input id="phone" name="phone" required>
                         </div>
                         <div>
-                            <label for="email">Email (optional)</label>
+                            <label for="email">Email (Optional)</label>
                             <input id="email" name="email" type="email">
                         </div>
                         <div>
-                            <label for="service">Service / Notes</label>
+                            <label for="service">Select Service</label>
                             <select id="service" name="service">
-                                <option value="">Select (optional)</option>
+                                <option value="">Choose a service...</option>
                                 <option>Hair & Styling</option>
-                                <option>Nails</option>
+                                <option>Nails & Manicure</option>
                                 <option>Brows & Lashes</option>
-                                <option>Facial / Skin</option>
+                                <option>Skin & Facials</option>
                             </select>
                         </div>
                     </div>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:12px">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:16px">
                         <div>
-                            <label for="date">Preferred date</label>
+                            <label for="date">Preferred Date</label>
                             <input id="date" name="date" type="date" required>
                         </div>
                         <div>
-                            <label for="time">Preferred time</label>
+                            <label for="time">Preferred Time</label>
                             <input id="time" name="time" type="time" required>
                         </div>
                     </div>
-                    <div style="margin-top:12px">
-                        <label for="notes">Additional notes</label>
-                        <textarea id="notes" name="notes" placeholder="Any preferences or notes (optional)"></textarea>
+                    <div style="margin-top:16px">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" name="notes" placeholder="Any special requests or preferences..."></textarea>
                     </div>
-                    <div style="margin-top:12px">
-                        <button class="btn" type="submit">Send Booking</button>
+                    <div style="margin-top:16px">
+                        <button class="btn" type="submit">Send Booking Request</button>
                     </div>
                 </form>
             </section>
 
             <section id="contact">
-                <h3 style="font-family:'Playfair Display',serif;color:var(--accent);margin:0 0 14px">Contact & Location</h3>
+                <h3 style="font-family:'Playfair Display',serif;color:var(--accent);margin:0 0 24px;font-size:1.8rem;text-align:center;letter-spacing:1px">Get in Touch</h3>
                 <div class="contact-grid">
                     <div class="contact-item">
                         <i class="fas fa-phone" aria-hidden="true"></i>
-                        <p><strong>Phone</strong><br><a href="tel:+27645174088">064 517 4088</a></p>
+                        <p><strong>Phone</strong><br><a href="tel:+27645174088">+27 64 517 4088</a></p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -247,7 +281,7 @@
                         <p><strong>Email</strong><br><a href="mailto:leah@letris.co.za">leah@letris.co.za</a></p>
                     </div>
                 </div>
-                <div style="margin-top:14px;display:flex;justify-content:flex-start;gap:10px;align-items:center">
+                <div style="margin-top:24px;display:flex;justify-content:center;gap:10px;align-items:center">
                     <div class="socials">
                         <a class="social" href="https://www.instagram.com/royalsbyeve/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i>Instagram</a>
                         <a class="social" href="https://www.facebook.com/share/1bV4PuWwL5/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i>Facebook</a>
@@ -259,16 +293,16 @@
         </main>
 
         <footer>
-            <div>&copy; 2026 Royals by Eve — Premium Beauty & Wellness</div>
-            <div style="margin-top:6px"><a href="privacy.html">Privacy Policy</a></div>
-            <div style="margin-top:6px">Company registration number: 2026/442824/07</div>
+            <div>&copy; 2026 Royals by Eve — Premium Beauty & Wellness Salon</div>
+            <div style="margin-top:8px"><a href="privacy.html">Privacy Policy</a></div>
+            <div style="margin-top:8px">Company registration number: 2026/442824/07</div>
         </footer>
 
     </div>
 
     <!-- WhatsApp floating -->
     <a class="whatsapp-btn" href="https://wa.me/27645174088?text=Hello%20Royals%20by%20Eve%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp" style="font-size:20px"></i>
+        <i class="fab fa-whatsapp" style="font-size:22px"></i>
     </a>
 
     <script>
@@ -281,7 +315,7 @@
             const email=document.getElementById('email').value.trim();
             const service=document.getElementById('service').value;
             const notes=document.getElementById('notes').value.trim();
-            if(!name||!phone||!date||!time){alert('Please fill in required fields');return}
+            if(!name||!phone||!date||!time){alert('Please fill in all required fields');return}
             const message = '*New Booking Request*%0A%0A' +
                 '*Name:* ' + encodeURIComponent(name) + '%0A' +
                 '*Phone:* ' + encodeURIComponent(phone) + '%0A' +
