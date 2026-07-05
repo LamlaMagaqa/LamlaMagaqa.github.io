@@ -32,9 +32,9 @@
         /* Header */
         header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;border-bottom:1px solid rgba(212,175,55,0.1)}
         .brand{display:flex;align-items:center;gap:20px}
-        /* Extra Large Logo - 3x bigger */
-        .logo-container{width:280px;height:280px;display:block;overflow:visible;flex:0 0 280px;display:flex;align-items:center;justify-content:center}
-        .brand img{height:220px;width:auto;display:block;transform-origin:center center;border-radius:12px;box-shadow:0 12px 32px rgba(212,175,55,0.2);animation:logoEntrance 700ms cubic-bezier(.2,.9,.3,1) forwards, logoFloat 4s ease-in-out infinite}
+        /* Extra Large Logo - 6x BIGGER (440px) */
+        .logo-container{width:440px;height:440px;display:block;overflow:visible;flex:0 0 440px;display:flex;align-items:center;justify-content:center}
+        .brand img{height:400px;width:auto;display:block;transform-origin:center center;border-radius:12px;box-shadow:0 12px 32px rgba(212,175,55,0.2);animation:logoEntrance 700ms cubic-bezier(.2,.9,.3,1) forwards, logoFloat 4s ease-in-out infinite}
         .brand h1{font-family:'Playfair Display',serif;color:var(--accent);font-size:1.8rem;margin:0;letter-spacing:2px;font-weight:700}
         .brand > div:last-child{display:flex;flex-direction:column;gap:4px}
         .brand > div:last-child > div{font-size:0.9rem;color:var(--muted);letter-spacing:0.5px}
@@ -127,17 +127,22 @@
         .whatsapp-btn:hover{transform:scale(1.15);box-shadow:0 8px 24px rgba(37,211,102,0.4)}
 
         /* Responsive tweaks */
+        @media(max-width:1200px){
+            .logo-container{width:340px;height:340px;flex:0 0 340px}
+            .brand img{height:300px}
+            header{gap:16px}
+        }
         @media(max-width:1000px){
             header{flex-direction:column;gap:16px;align-items:center;text-align:center}
-            .logo-container{width:220px;height:220px;flex:0 0 220px}
-            .brand img{height:170px}
+            .logo-container{width:280px;height:280px;flex:0 0 280px}
+            .brand img{height:240px}
             .brand h1{font-size:1.5rem}
             nav.site-nav{flex-wrap:wrap;justify-content:center}
         }
         @media(max-width:768px){
             .wrap{padding:20px}
-            .logo-container{width:160px;height:160px;flex:0 0 160px}
-            .brand img{height:128px}
+            .logo-container{width:200px;height:200px;flex:0 0 200px}
+            .brand img{height:160px}
             .brand h1{font-size:1.2rem}
             .hero{padding:32px 20px;gap:20px}
             .hero h2{font-size:1.8rem}
@@ -147,8 +152,8 @@
             header{border-bottom:none}
         }
         @media(max-width:480px){
-            .logo-container{width:120px;height:120px;flex:0 0 120px}
-            .brand img{height:92px}
+            .logo-container{width:140px;height:140px;flex:0 0 140px}
+            .brand img{height:110px}
             .brand h1{font-size:1rem}
             .hero h2{font-size:1.4rem}
             .hero p.lead{font-size:0.95rem}
